@@ -1,0 +1,41 @@
+{
+  "company": {
+    "name": "ACM Ltda.",
+    "address": "Main Street, 123",
+    "city": "New York",
+    "state": "NY"
+  },
+  "projects": [
+    {
+      "name": "System Development X",
+      "beginDate": "2024-01-01",
+      "endDate": "2024-06-06",
+      "team": [
+        {"name": "John Star", "role": "Senior Developer"},
+        {"name": "Marie Loo", "role": "BDM"}
+      ],
+      "tasks": [
+        {"description": "Requirements", "status": "Done"},
+        {"description": "Development", "status": "Doing"}
+      ]
+    },
+    {
+      "name": "ERP Development Y",
+      "beginDate": "2024-03-03",
+      "endDate": "2025-12-12",
+      "team": [
+        {"name": "Peter Rogers", "role": "Project Manager"},
+        {"name": "Robert Plant", "role": "ERP Specialist"}
+      ],
+      "tasks": [
+        {"description": "ERP configuration", "status": "Done"},
+        {"description": "User training", "status": "Doing"}
+      ]
+    }
+  ],
+  "principalContact": {
+    "name": "Carlos Olivera",
+    "email": "carlos.olivera@company.com",
+    "phone": "+1 555 555-555"
+  }
+}

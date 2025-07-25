@@ -15,7 +15,8 @@
       "links": {
         "Swagger": "${serverUrl}/swagger-ui/index.html"
       }
-    }
+    },
+    "java.configuration.updateBuildConfiguration": "interactive"
 
 
 }

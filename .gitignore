@@ -1,2 +1,6 @@
 .DS_Store
 iris-main.log
+java/target
+java/.classpath
+java/.project
+java/.settings

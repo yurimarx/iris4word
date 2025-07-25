@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "2d959f87-952f-446f-a0f9-202773349e3c",
+		"name": "iris4word",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2548523"
+	},
+	"item": [
+		{
+			"name": "1. Upload Template",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "_system",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/projetos/intersystems/iris4word/sample/template.docx"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:52773/crud/upload-template",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "52773",
+					"path": [
+						"crud",
+						"upload-template"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Download Word Document (click Send and Download)",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "_system",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"empresa\": {\r\n    \"nome\": \"Minha Grande Empresa Ltda.\",\r\n    \"endereco\": \"Rua Principal, 123\",\r\n    \"cidade\": \"Sao Paulo\",\r\n    \"estado\": \"SP\"\r\n  },\r\n  \"projetos\": [\r\n    {\r\n      \"nomeProjeto\": \"Desenvolvimento do Sistema X\",\r\n      \"dataInicio\": \"2024-01-15\",\r\n      \"dataFim\": \"2024-06-30\",\r\n      \"equipe\": [\r\n        {\"nome\": \"Joao Silva\", \"funcao\": \"Desenvolvedor Senior\"},\r\n        {\"nome\": \"Maria Souza\", \"funcao\": \"Analista de Negocios\"}\r\n      ],\r\n      \"tarefas\": [\r\n        {\"descricao\": \"Analise de requisitos\", \"status\": \"Concluido\"},\r\n        {\"descricao\": \"Codificacao modulo A\", \"status\": \"Em Andamento\"}\r\n      ]\r\n    },\r\n    {\r\n      \"nomeProjeto\": \"Implementacao do ERP Y\",\r\n      \"dataInicio\": \"2024-03-01\",\r\n      \"dataFim\": \"2025-02-28\",\r\n      \"equipe\": [\r\n        {\"nome\": \"Pedro Santos\", \"funcao\": \"Gerente de Projetos\"},\r\n        {\"nome\": \"Ana Costa\", \"funcao\": \"Consultora ERP\"}\r\n      ],\r\n      \"tarefas\": [\r\n        {\"descricao\": \"Configuracao inicial\", \"status\": \"Concluido\"},\r\n        {\"descricao\": \"Treinamento de usuarios\", \"status\": \"Pendente\"}\r\n      ]\r\n    }\r\n  ],\r\n  \"contatoPrincipal\": {\r\n    \"nome\": \"Carlos Oliveira\",\r\n    \"email\": \"carlos.olivera@empresa.com\",\r\n    \"telefone\": \"+55 11 98765-4321\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:52773/crud/download-doc/template",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "52773",
+					"path": [
+						"crud",
+						"download-doc",
+						"template"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
