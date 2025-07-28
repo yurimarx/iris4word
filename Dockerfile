@@ -3,6 +3,7 @@ ARG IMAGE=intersystemsdc/iris-community
 FROM $IMAGE
 
 COPY sample /usr/irissys/bin/sample/
+COPY enstemplate.docx /usr/irissys/enstemplate.docx
 COPY iris4word-1.0.0-jar-with-dependencies.jar /usr/irissys/bin/
 
 WORKDIR /home/irisowner/dev

@@ -8,6 +8,7 @@
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="dc.iris4word.PKG"/>
       <FileCopy Name="iris4word-1.0.0-jar-with-dependencies.jar" Target="${bindir}"/>
+      <FileCopy Name="enstemplate.docx" Target="${bindir}"/>
       <Dependencies>
         <ModuleReference>
           <Name>swagger-ui</Name>

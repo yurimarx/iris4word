@@ -73,7 +73,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"empresa\": {\r\n    \"nome\": \"Minha Grande Empresa Ltda.\",\r\n    \"endereco\": \"Rua Principal, 123\",\r\n    \"cidade\": \"Sao Paulo\",\r\n    \"estado\": \"SP\"\r\n  },\r\n  \"projetos\": [\r\n    {\r\n      \"nomeProjeto\": \"Desenvolvimento do Sistema X\",\r\n      \"dataInicio\": \"2024-01-15\",\r\n      \"dataFim\": \"2024-06-30\",\r\n      \"equipe\": [\r\n        {\"nome\": \"Joao Silva\", \"funcao\": \"Desenvolvedor Senior\"},\r\n        {\"nome\": \"Maria Souza\", \"funcao\": \"Analista de Negocios\"}\r\n      ],\r\n      \"tarefas\": [\r\n        {\"descricao\": \"Analise de requisitos\", \"status\": \"Concluido\"},\r\n        {\"descricao\": \"Codificacao modulo A\", \"status\": \"Em Andamento\"}\r\n      ]\r\n    },\r\n    {\r\n      \"nomeProjeto\": \"Implementacao do ERP Y\",\r\n      \"dataInicio\": \"2024-03-01\",\r\n      \"dataFim\": \"2025-02-28\",\r\n      \"equipe\": [\r\n        {\"nome\": \"Pedro Santos\", \"funcao\": \"Gerente de Projetos\"},\r\n        {\"nome\": \"Ana Costa\", \"funcao\": \"Consultora ERP\"}\r\n      ],\r\n      \"tarefas\": [\r\n        {\"descricao\": \"Configuracao inicial\", \"status\": \"Concluido\"},\r\n        {\"descricao\": \"Treinamento de usuarios\", \"status\": \"Pendente\"}\r\n      ]\r\n    }\r\n  ],\r\n  \"contatoPrincipal\": {\r\n    \"nome\": \"Carlos Oliveira\",\r\n    \"email\": \"carlos.olivera@empresa.com\",\r\n    \"telefone\": \"+55 11 98765-4321\"\r\n  }\r\n}",
+					"raw": "{\r\n  \"company\": {\r\n    \"name\": \"ACM Ltda.\",\r\n    \"address\": \"Main Street, 123\",\r\n    \"city\": \"New York\",\r\n    \"state\": \"NY\"\r\n  },\r\n  \"projects\": [\r\n    {\r\n      \"name\": \"System Development X\",\r\n      \"beginDate\": \"2024-01-01\",\r\n      \"endDate\": \"2024-06-06\",\r\n      \"team\": [\r\n        {\"name\": \"John Star\", \"role\": \"Senior Developer\"},\r\n        {\"name\": \"Marie Loo\", \"role\": \"BDM\"}\r\n      ],\r\n      \"tasks\": [\r\n        {\"description\": \"Requirements\", \"status\": \"Done\"},\r\n        {\"description\": \"Development\", \"status\": \"Doing\"}\r\n      ]\r\n    },\r\n    {\r\n      \"name\": \"ERP Development Y\",\r\n      \"beginDate\": \"2024-03-03\",\r\n      \"endDate\": \"2025-12-12\",\r\n      \"team\": [\r\n        {\"name\": \"Peter Rogers\", \"role\": \"Project Manager\"},\r\n        {\"name\": \"Robert Plant\", \"role\": \"ERP Specialist\"}\r\n      ],\r\n      \"tasks\": [\r\n        {\"description\": \"ERP configuration\", \"status\": \"Done\"},\r\n        {\"description\": \"User training\", \"status\": \"Doing\"}\r\n      ]\r\n    }\r\n  ],\r\n  \"principalContact\": {\r\n    \"name\": \"Carlos Olivera\",\r\n    \"email\": \"carlos.olivera@company.com\",\r\n    \"phone\": \"+1 555 555-555\"\r\n  }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -91,6 +91,41 @@
 						"crud",
 						"download-doc",
 						"template"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Production Report",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "_system",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:52773/crud/ens-report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "52773",
+					"path": [
+						"crud",
+						"ens-report"
 					]
 				}
 			},
