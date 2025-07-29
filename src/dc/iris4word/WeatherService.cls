@@ -11,21 +11,9 @@ Property Longitude As %String [ InitialExpression = "13.41" ];
 
 Method OnProcessInput(pInput As Ens.Request, Output pOutput As ClassifyWeatherResponse) As %Status
 {
-        Set tSC = $$$OK
-        Set tHTTP = ##class(%Net.HttpRequest).%New()
+        Set TemperatureData = ..GetTemperatureData(..Latitude, ..Longitude)
         
-        Set tHTTP.Server = "api.open-meteo.com"
-        Set tHTTP.Port = 443
-        Set tHTTP.Https = 1
-        Set tHTTP.SSLConfiguration = "pm.community.intersystems.com"
-        
-        // Use the parameters from the message for the API call
-        Set tURL = "/v1/forecast?latitude="_..Latitude_"&longitude="_..Longitude_"&current_weather=true"
-        
-        Set tSC = tHTTP.Get(tURL)
-        If $$$ISERR(tSC) Quit tSC
-        
-        Set tJSON = {}.%FromJSON(tHTTP.HttpResponse.Data)
+        Set tJSON = {}.%FromJSON(TemperatureData)
         Set tTemperature = tJSON."current_weather".temperature
 
         Set pRequest = ##class(dc.iris4word.GetWeatherData).%New()
@@ -40,6 +28,30 @@ Method OnProcessInput(pInput As Ens.Request, Output pOutput As ClassifyWeatherRe
         Set pOutput = tResponse
         
         Quit $$$OK
+}
+
+/// Get temperature data
+ClassMethod GetTemperatureData(latitude As %String, longitude As %String) As %String [ Language = python ]
+{
+        import urllib.request
+        import json
+        
+        base_url = "https://api.open-meteo.com/v1/forecast"
+        params = f"?latitude={latitude}&longitude={longitude}&current_weather=true"
+        url = base_url + params
+
+        try:
+                with urllib.request.urlopen(url) as response:
+                        data = response.read().decode('utf-8')
+                        json_data = json.loads(data)
+                        return data
+            
+        except urllib.error.URLError as e:
+                return json.dumps({"error": f"Error while connecting the API Open-Meteo: {e.reason}"}, ensure_ascii=False, indent=4)
+        except json.JSONDecodeError:
+                return json.dumps({"error": "Invalid JSON"}, ensure_ascii=False, indent=4)
+        except Exception as e:
+                return json.dumps({"error": f"Unexpected error: {str(e)}"}, ensure_ascii=False, indent=4)
 }
 
 }
