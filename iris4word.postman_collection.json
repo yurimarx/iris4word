@@ -130,6 +130,41 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "4. BI Report",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "SYS",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "_system",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:52773/crud/bi-report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "52773",
+					"path": [
+						"crud",
+						"bi-report"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
