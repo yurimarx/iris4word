@@ -1,7 +1,7 @@
 Class dc.iris4word.ClassifyWeatherResponse Extends Ens.Response
 {
 
-Property Temperature As %String;
+Property Temperature As %Double;
 
 Property Classification As %String;
 

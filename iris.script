@@ -4,6 +4,8 @@
     Do ##class(Security.Users).UnExpireUserPasswords("*")
     zpm "install passwordless"
 
+    do EnableDeepSee^%SYS.cspServer("/csp/user")
+
     zn "USER"
     zpm "load /home/irisowner/dev/ -v":1
 

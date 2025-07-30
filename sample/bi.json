@@ -1,0 +1,32 @@
+{
+    "cubes": [
+        {
+            "name": "TemperatureCube",
+            "displayName": "TemperatureCube",
+            "lastModified": "2025-07-30 11:13:27",
+            "type": "cube"
+        }
+    ],
+    "dashboards": [
+        {
+            "fullName": "Ens/Analytics/ActivityVolumeAndDuration",
+            "name": "ActivityVolumeAndDuration",
+            "lastModified": "2025-03-12 01:17:52",
+            "itemType": "dashboard"
+        },
+        {
+            "fullName": "iris4word/TemperatureDashboard",
+            "name": "TemperatureDashboard",
+            "lastModified": "2025-07-30 11:14:31",
+            "itemType": "dashboard"
+        }
+    ],
+    "pivots": [
+        {
+            "fullName": "iris4word/TemperatureAnalysis",
+            "name": "TemperatureAnalysis",
+            "lastModified": "2025-07-30 11:30:02",
+            "itemType": "pivot"
+        }
+    ]
+}

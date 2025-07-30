@@ -20,6 +20,9 @@ XData UrlMap [ XMLNamespace = "http://www.intersystems.com/urlmap" ]
 <!-- Get Ens production report -->
 <Route Url="/ens-report" Method="GET" Call="GetEnsReport"/>
 
+<!-- Get BI report -->
+<Route Url="/bi-report" Method="GET" Call="GetBIReport"/>
+
 
 </Routes>
 }
@@ -84,13 +87,33 @@ ClassMethod DownloadDoc(template As %String) As %Status
     Return sc
 }
 
-/// Download the word document from a template and body JSON data 
+/// Get Interoperability Production report 
 ClassMethod GetEnsReport() As %Status
 {
     Set tUUID = $System.Util.CreateGUID() 
     Set filePath = "/tmp/"_tUUID_".docx"
     Set jsonContentString = {}.%FromJSON(%request.Content)
     Set sc = ##class(dc.iris4word.EnsUtil).GetEnsDocReport(filePath)
+
+    Set %response.NoCharSetConvert=1
+    Set %response.Headers("Access-Control-Allow-Origin")="*"
+    Do %response.SetHeader("Content-Type","application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+    Do %response.SetHeader("Content-Disposition","attachment;filename="""_tUUID_".docx"_"""")
+    
+    Set stream=##class(%Stream.FileBinary).%New()
+    Set sc=stream.LinkToFile(filePath)
+    Do stream.OutputToDevice()
+    
+    Return sc
+}
+
+/// Get BI report 
+ClassMethod GetBIReport() As %Status
+{
+    Set tUUID = $System.Util.CreateGUID() 
+    Set filePath = "/tmp/"_tUUID_".docx"
+    Set jsonContentString = {}.%FromJSON(%request.Content)
+    Set sc = ##class(dc.iris4word.BIUtil).GetBIDocReport(filePath)
 
     Set %response.NoCharSetConvert=1
     Set %response.Headers("Access-Control-Allow-Origin")="*"

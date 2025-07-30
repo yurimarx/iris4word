@@ -3,12 +3,25 @@
   <Document name="iris4word.ZPM">
     <Module>
       <Name>iris4word</Name>
-      <Version>1.1.0</Version>
+      <Version>1.2.0</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="dc.iris4word.PKG"/>
+      <Resource Directory="dfi" FilenameExtension="dfi" Name="iris4word-TemperatureAnalysis.pivot.DFI" />
+      <Resource Directory="dfi" FilenameExtension="dfi" Name="iris4word-TemperatureDashboard.dashboard.DFI" />
       <FileCopy Name="iris4word-1.0.0-jar-with-dependencies.jar" Target="${bindir}"/>
       <FileCopy Name="enstemplate.docx" Target="${bindir}"/>
+      <FileCopy Name="bitemplate.docx" Target="${bindir}"/>
+      <Invokes>
+        <Invoke Class="%DeepSee.Utils" Method="%BuildCube">
+          <Arg>TemperatureCube</Arg>
+        </Invoke>
+        <Invoke Class="dc.iris4word.TemperatureCube" Method="EnableIRISBI">
+        </Invoke>
+        <Invoke Class="dc.iris4word.TemperatureCube" Method="StopJournalling">
+          <Arg>USER</Arg>
+        </Invoke>
+      </Invokes>
       <Dependencies>
         <ModuleReference>
           <Name>swagger-ui</Name>
