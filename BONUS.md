@@ -11,7 +11,10 @@ Yes, the EnsUtil is a tool to create the documentation of a interoperability pro
 - https://github.com/yurimarx/iris4word/blob/7de8d8c19855d208f7261fa5a3f08fb527225b53/src/dc/iris4word/EnsUtil.cls#L11
 
 <b>InterSystems IRIS BI - 3</b>
-Not yet
+Yes. the BIUtil is a tool to create the documentation of BI assets on MS Word:
+- https://github.com/yurimarx/iris4word/blob/ab07d0544fe373c781077be0e14fa0bb664d0977/src/dc/iris4word/BIUtil.cls#L5
+- https://github.com/yurimarx/iris4word/blob/ab07d0544fe373c781077be0e14fa0bb664d0977/src/dc/iris4word/BIUtil.cls#L16
+
 
 <b>VSCode Plugin - 3</b>
 No
