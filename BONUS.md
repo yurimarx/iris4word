@@ -32,6 +32,7 @@ Yes (it is published, you can check it on OpenExchange)
 <b>Implement InterSystems Community Idea - 4</b>
 Yes, 2 ideas:
 - https://ideas.intersystems.com/ideas/DPI-I-213 (community opportunity)
+- https://ideas.intersystems.com/ideas/DPI-I-408 (community opportunity)
 - https://ideas.intersystems.com/ideas/DPI-I-785 (needs review)
 
 <b>Find a bug in Embedded Python - 2</b>

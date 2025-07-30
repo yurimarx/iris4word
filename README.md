@@ -40,3 +40,17 @@ $ docker-compose up -d --build
 8. Compare with sample/data.json
 9. Open the file sample/template.docx and see the marks and tags used.
 10. Enjoy this app to create word documents easily!
+
+## Credits
+1. App based on the OEX templates: 
+- https://openexchange.intersystems.com/package/iris-analytics-template
+- https://openexchange.intersystems.com/package/iris-interoperability-template
+- https://openexchange.intersystems.com/package/iris-rest-api-template
+
+2. Inspired by ideas:
+- https://ideas.intersystems.com/ideas/DPI-I-785
+- https://ideas.intersystems.com/ideas/DPI-I-408
+- https://ideas.intersystems.com/ideas/DPI-I-213
+
+3. Based on Java library:
+- https://github.com/Sayi/poi-tl
